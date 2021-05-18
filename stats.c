@@ -47,27 +47,86 @@ void main() {
 /* Add other Implementation File Code Here */ 
 
 void print_statistics(unsigned char mean, unsigned char median, unsigned char maximum, unsigned char minimum){
-
+  printf("The mean is: "); 
+  printf("%d\n", mean);
+  printf("The median is: "); 
+  printf("%d\n", median);
+  printf("The maximum is: "); 
+  printf("%d\n", maximum); 
+  printf("The minimum is: "); 
+  printf("%d\n", minimum);
 } 
 
 void print_array(int length, unsigned char *ptr){
-
+  for (int i = 0; i < length; i++){
+    printf("[%d] %d\n",i,*(ptr+i));
+  }
 } 
 
 unsigned char find_median(int length, unsigned char *ptr){
-  
+  sort_array(length,ptr);
+  unsigned char median;
+  if (length % 2 == 0){
+    median = (*(ptr + length / 2 - 1) + *(ptr + length / 2)) / 2;
+  }
+  else {
+    median = *(ptr + length / 2 - 1);
+  }
+  return median;
 }
 unsigned char find_maximum(int length, unsigned char *ptr){ 
-
+  int i;
+  unsigned char maximum = *ptr; 
+  for (i = 0; i < length; ++i) { 
+    if (*(ptr + i) > maximum) { 
+      maximum = *(ptr + i); }
+    } 
+  return maximum; 
 } 
 unsigned char find_minimum(int length, unsigned char *ptr){ 
-
+  int i; 
+  unsigned char minimum = *ptr; 
+  for (i = 0; i < length; ++i) { 
+    if (*(ptr + i) < minimum) { 
+      minimum = *(ptr + i); 
+    } 
+  }  
+  return minimum; 
 } 
 
 unsigned char find_mean(int length, unsigned char *ptr){
- 
+  int i;
+  int sum = 0;
+  unsigned char mean = 0;
+  if ( ptr == NULL){
+    return 0;
+  }
+  if ( length <= 0 ) {
+    length = 1;
+  }
+  for(i = 0; i < length; i++){
+    sum += *(ptr+i);  
+  } 
+  mean = sum / length;
+  return mean;
 }
 
 void sort_array(int length, unsigned char *ptr){
-  
+  unsigned char temp_arr[length];
+  // create temporary array from which to pick the sorted values
+  for (int i = 0; i < length; i++){
+    temp_arr[i] = *(ptr+i);
+  }
+  // find the maximum of the current array, copy it to arr[] and then change its value to 0. Repeat.
+  int maximum;
+  for (int i = 0; i < length; i++){
+    maximum = find_maximum(length, temp_arr);
+    for (int j = 0; j < length; j++){
+      if (temp_arr[j] == maximum){
+        *(ptr+i) = maximum;
+        temp_arr[j] = 0;
+        break;
+      }   
+    }
+  }
 }
