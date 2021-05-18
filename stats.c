@@ -26,22 +26,48 @@
 #define SIZE (40) 
 
 void main() { 
-  printf("We have entered main()\n"); 
   unsigned char test[SIZE] = { 34, 201, 190, 154,   8, 194,   2,   6,
                               114, 88,   45,  76, 123,  87,  25,  23,
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
-                                7,  87, 250, 230,  99,   3, 100,  90}; 
+                                7,  87, 250, 230,  99,   3, 100, 90}; 
   /* Other Variable Declarations Go Here */ 
+  unsigned char *ptr = test;
   /* Statistics and Printing Functions Go Here */ 
+  sort_array(SIZE, ptr);
+  printf("The sorted array is:\n");
+  print_array(SIZE, ptr);
+  unsigned char mean = find_mean(SIZE, ptr);
+  unsigned char median = find_median(SIZE, ptr);
+  unsigned char maximum = find_maximum(SIZE, ptr);
+  unsigned char minimum = find_minimum(SIZE, ptr);
+  print_statistics(mean, median, maximum, minimum);
 } 
     
 /* Add other Implementation File Code Here */ 
 
-int print_statistics(int mean, int median, int maximum, int minimum){} 
-int print_array(int length, unsigned char arr[]){} 
-int find_median(int length, unsigned char arr[]){}
-int find_maximum(int length, unsigned char arr[]){} 
-int find_minimum(int length, unsigned char arr[]){} 
-int find_mean(int length, unsigned char arr[]){}
-int sort_array(int length, unsigned char arr[]){}
+void print_statistics(unsigned char mean, unsigned char median, unsigned char maximum, unsigned char minimum){
+
+} 
+
+void print_array(int length, unsigned char *ptr){
+
+} 
+
+unsigned char find_median(int length, unsigned char *ptr){
+  
+}
+unsigned char find_maximum(int length, unsigned char *ptr){ 
+
+} 
+unsigned char find_minimum(int length, unsigned char *ptr){ 
+
+} 
+
+unsigned char find_mean(int length, unsigned char *ptr){
+ 
+}
+
+void sort_array(int length, unsigned char *ptr){
+  
+}

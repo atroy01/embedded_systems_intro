@@ -36,78 +36,78 @@
  *
  * @return Nothing. Just print the statistics to the screen using printf();
  */
-int print_statistics(int mean, int median, int maximum, int minimum);
+void print_statistics(unsigned char mean, unsigned char median, unsigned char maximum, unsigned char minimum);
 
 /**
  * @brief Print an array to the screen
  *
- * This function takes as input an array and a length and prints the array to the screen
+ * This function takes as input a pointer and a length and prints an array to the screen
  *
- * @param array The array of numbers to print to the screen
+ * @param ptr The pointer variable that points to the array
  * @param length The length of the array
  *
  * @return Nothing. Just print the array to the screen using printf();
  */
-int print_array(int length, unsigned char arr[]);
+void print_array(int length, unsigned char *ptr);
 
 /**
  * @brief Find the median of an array
  *
- * This function takes as input an array and a length and returns the median of the array as an int
+ * This function takes as input a pointer to an array and a length and returns the median of the array
  *
- * @param array The array of numbers from which the median will be calculated
+ * @param ptr The pointer variable that points to the array
  * @param length The length of the array
  *
  * @return The median of the array
  */
-int find_median(int length, unsigned char arr[]);
+unsigned char find_median(int length, unsigned char *ptr);
 
 /**
  * @brief Find the mean of an array
  *
- * This function takes as input an array and a length and returns the mean of the array as an int
+ * This function takes as input a pointer to an array and a length and returns the mean of the array
  *
- * @param array The array of numbers from which the mean will be calculated
+ * @param ptr The pointer variable that points to the array
  * @param length The length of the array
  *
  * @return The mean of the array
  */
-int find_mean(int length, unsigned char arr[]);
+unsigned char find_mean(int length, unsigned char *ptr);
 
 /**
  * @brief Find the maximum of an array
  *
- * This function takes as input an array and a length and returns the maximum of the array as an int
+ * This function takes as input a pointer to an array and a length and returns the maximum of the array
  *
- * @param array The array of numbers from which the maximum will be identified
+ * @param ptr The pointer variable that points to the array
  * @param length The length of the array
  *
  * @return The maximum of the array
  */
-int find_maximum(int length, unsigned char arr[]);
+unsigned char find_maximum(int length, unsigned char *ptr);
 
 /**
  * @brief Find the minimum of an array
  *
- * This function takes as input an array and a length and returns the minimum of the array as an int
+ * This function takes as input a pointer to an array and a length and returns the minimum of the array
  *
- * @param array The array of numbers from which the minimum will be identified
+ * @param ptr The pointer variable that points to the array
  * @param length The length of the array
  *
  * @return The minimum of the array
  */
-int find_minimum(int length, unsigned char arr[]);
+unsigned char find_minimum(int length, unsigned char *ptr);
 
 /**
  * @brief Sort an array
  *
- * This function takes as input an array and a length sorts the array from largest to smallest and prints sorted array to the screen
+ * This function takes as input a pointer to an array and a length sorts the array from largest to smallest
  * 
- * @param array The array of numbers to be sorted
+ * @param ptr The pointer variable that points to the array
  * @param length The length of the array
  *
- * @return Nothing. Print to sorted array to the screen.
+ * @return Nothing. But the array has been sorted from largest to smallest.
  */
-int sort_array(int length, unsigned char arr[]);
+void sort_array(int length, unsigned char *ptr);
 
 #endif /* __STATS_H__ */
